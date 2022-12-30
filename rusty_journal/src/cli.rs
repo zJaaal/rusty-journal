@@ -5,7 +5,7 @@ use structopt::StructOpt;
 pub enum Action {
     Add {
         #[structopt()]
-        task: String,
+        text: String,
     },
     Done {
         #[structopt()]
@@ -23,5 +23,5 @@ pub struct CommandLineArgs {
     #[structopt(subcommand)]
     pub action: Action,
     #[structopt(parse(from_os_str), short, long)]
-    pub jounal_file: Option<PathBuf>,
+    pub journal_file: Option<PathBuf>,
 }
